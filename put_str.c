@@ -13,7 +13,6 @@ int put_str(char *s)
 		write(1, p, strlen(p));
 		return (strlen(p));
 	}
-	
 	write(1, s, strlen(s));
 	return (strlen(s));
 }
