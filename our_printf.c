@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _printf - a function that replaces printf.
  * @format: string to be printed.
@@ -9,7 +10,6 @@
 int _printf(const char *format, ...)
 {
 	int count = 0, i = 0;
-	char *s, c;
 
 	va_list daloom;
 
@@ -26,10 +26,10 @@ int _printf(const char *format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					count += print_char(va_arg(daloom, int));
+					count += put_char(va_arg(daloom, int));
 					break;
 				case 's':
-					count += print_str(va_arg(daloom, char *));
+					count += put_str(va_arg(daloom, char *));
 					break;
 				case '%':
 					count +=	write(1, "%%", 1);
@@ -40,6 +40,8 @@ int _printf(const char *format, ...)
 			}
 			i++;
 		}
+
+	}
 		va_end(daloom);
 		return (count);
 }
