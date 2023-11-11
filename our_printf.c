@@ -32,14 +32,14 @@ int _printf(const char *format, ...)
 					count += put_str(va_arg(daloom, char *));
 					break;
 				case '%':
-					count +=	write(1, "%%", 1);
+					count += write(1, "%%", 1);
 					break;
 				default:
 					count += write(1, &format[i], 1);
 					break;
 			}
-			i++;
 		}
+		i++;
 
 	}
 		va_end(daloom);
