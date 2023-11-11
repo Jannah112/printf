@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <string.h>
+#include <stdlib.h>
 
 int put_char(char c);
 int put_str(char *s);
