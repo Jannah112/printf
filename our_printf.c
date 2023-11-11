@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	va_start(daloom, format);
 	while (format[i] != 0)
 	{
-		if (format[i] != '%')
+		if (format[i] != '%' || (format[0] == '%' && format[1] == '\0'))
 			count += write(1, &format[i], 1);
 		else
 		{
