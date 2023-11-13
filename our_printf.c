@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, i = 0, num;
+	int count = 0, i = 0;
 
 	va_list daloom;
 
@@ -23,34 +23,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			switch (format[i])
-			{
-				case '\0':
-					break;
-				case 'c':
-					count += put_char(va_arg(daloom, int));
-					break;
-				case 's':
-					count += put_str(va_arg(daloom, char *));
-					break;
-				case '%':
-					count += write(1, "%%", 1);
-					break;
-				case 'd':
-					num = va_arg(daloom, int);
-					print_di(num);
-					count += counter(num);
-					break;
-				case 'i':
-					num = va_arg(daloom, int);
-					print_di(num);
-					count += counter(num);
-					break;
-				default:
-					count += write(1, &format[i - 1], 1);
-					count += write(1, &format[i], 1);
-					break;
-			}
+			count += cases(format[i], daloom);
 		}
 		i++;
 
