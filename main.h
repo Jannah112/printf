@@ -14,5 +14,6 @@ int put_str(char *s);
 int counter(int number);
 void print_di(int n);
 int cases(char c, va_list n);
+void _putchar(char c);
 
 #endif
