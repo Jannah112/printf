@@ -38,7 +38,12 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					num = va_arg(daloom, int);
-					print_number(num);
+					print_di(num);
+					count += counter(num);
+					break;
+				case 'i':
+					num = va_arg(daloom, int);
+					print_di(num);
 					count += counter(num);
 					break;
 				default:

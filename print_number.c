@@ -10,7 +10,7 @@ void print_di(int num)
 	if (num < 0)
 	{
 		pn = -num;
-		_putchar('-');
+		putchar('-');
 	}
 	else
 	{
@@ -18,5 +18,5 @@ void print_di(int num)
 	}
 	if (pn / 10)
 		print_di(pn / 10);
-	_putchar((pn % 10) + '0');
+	putchar((pn % 10) + '0');
 }

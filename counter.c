@@ -29,5 +29,6 @@ int counter(int number)
 			base = base / 10;
 			count++;
 		}
+	}
 		return (count);
 }
