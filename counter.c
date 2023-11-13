@@ -4,14 +4,14 @@
  * @number: number
  * Return: return number of digits
  */
-int counter(int number)
+int counter(long int number)
 {
 	 int count = 0, base;
 
 	if (number < 0)
 	{
+		number *= -1;
 		count++;
-		number = INT_MAX;
 	}
 	if (number >= 0 && number <= 9)
 	{
@@ -20,12 +20,13 @@ int counter(int number)
 	if (number > 9)
 	{
 		base = 10;
-		while (base > 0 && number / base > 9)
+		while (number / base > 9)
 		{
 			base *= 10;
 		}
 		while (base > 0)
 		{
+			number = number % base;
 			base = base / 10;
 			count++;
 		}

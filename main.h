@@ -11,7 +11,7 @@
 int _printf(const char *format, ...);
 int put_char(char c);
 int put_str(char *s);
-int counter(int number);
+int counter(long int number);
 void print_di(int n);
 int cases(char c, va_list n);
 void _putchar(char c);
