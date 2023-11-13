@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 
 	va_list daloom;
 
-	if (format == 0)
+	if (format == 0 || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(daloom, format);
 	while (format[i] != 0)
